@@ -14,44 +14,36 @@ void app_main(void)
 	 ARGB_Clear(); // Clear stirp
 	 while (ARGB_Show() != ARGB_OK); // Update - Option 1
 
-	 int i = 0;
+	 /*int i = 0;
 	 while(i<1000)
 	 {
-	    ARGB_SetBrightness(40);  // Set global brightness to 40%
+	    ARGB_SetBrightness(10);  // Set global brightness to 40%
 
 
-	    //ARGB_FillRGB(60,60,60);
-	    ARGB_SetRGB(0, 60, 60, 60); // Set LED №3 with 255 Green
-	    //ARGB_SetRGB(1, 60, 60, 60); // Set LED №3 with 255 Green
-	    ARGB_SetRGB(2, 0, 0, 60); // Set LED №3 with 255 Green
-	    //ARGB_SetRGB(3, 60, 60, 60); // Set LED №3 with 255 Green
-	    ARGB_SetRGB(4, 60, 60, 60); // Set LED №3 with 255 Green
-	    //ARGB_SetRGB(5, 60, 60, 60); // Set LED №3 with 255 Green
-	    ARGB_SetRGB(6, 60, 60, 60); // Set LED №3 with 255 Green
+	    ARGB_FillRGB(60,60,60);
+	    //ARGB_SetRGB(0, 60, 60, 60); // 1 diod R and G
+	    //ARGB_SetRGB(1, 60, 60, 60); // null
+	    //ARGB_SetRGB(2, 60, 60, 60); // 1 diod B and 2 diod R and G
 	    while (!ARGB_Show());  // Update - Option 2
 
-	    HAL_Delay(500);
+	    HAL_Delay(1000);
 	    i=i+1;
 
-	 }
-	    //ARGB_FillRGB(200, 0, 0); // Fill all the strip with Red
-	    //    while (!ARGB_Show());
+	 }*/
 
 
-	    /*
 	    int numb_diode = 0;
 	    while(1)
 	    {
-
-	    ARGB_SetHSV(numb_diode, 0, 255, 0); // Set LED №1 with green
-	    while (!ARGB_Ready()); // Update - Option 3
-	    ARGB_Show();
+		ARGB_Clear(); // Clear stirp
+		ARGB_SetRGB(numb_diode, 5, 0, 0); // Set LED №1 with green
+	    while (!ARGB_Show()); // Update - Option 3
 
 	    HAL_Delay(1000);
 	    numb_diode++;
-	    if(numb_diode > 59)
+	    if(numb_diode > 2)
 	    	numb_diode = 0;
-	    }*/
+	    }
 
 	/*while(1)
 	{

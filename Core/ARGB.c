@@ -204,6 +204,7 @@ void ARGB_SetRGB(u16_t i, u8_t r, u8_t g, u8_t b) {
         u16_t _i = i / NUM_PIXELS;
         i -= _i * NUM_PIXELS;
     }
+    i=i*2; // hotfix_bag
     // set brightness
     r /= 256 / ((u16_t) ARGB_BR + 1);
     g /= 256 / ((u16_t) ARGB_BR + 1);
@@ -230,7 +231,7 @@ void ARGB_SetRGB(u16_t i, u8_t r, u8_t g, u8_t b) {
 #else
     RGB_BUF[3 * i] = subp1;     // subpixel 1
     RGB_BUF[3 * i + 1] = subp2; // subpixel 2
-    RGB_BUF[3 * i + 2] = subp3; // subpixel 3
+    RGB_BUF[3 * i + 2 + 6] = subp3; // subpixel 3
 #endif
 }
 
