@@ -30,21 +30,63 @@ void app_main(void)
 	    i=i+1;
 
 	 }*/
+	 	HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+	 	/*ARGB_Clear(); // Clear stirp
+	 	ARGB_SetBrightness(10);  // Set global brightness to 40%
+	 	ARGB_FillRGB(39,250,176);
+	 	while (!ARGB_Show()); // Update - Option 3
+		*/
+	 	int Brightness = 1;
+	 	int flag_up = 1;
+	 	while(1)
+	 	{
+	 		HAL_Delay(100);
+	 		if (flag_up)
+				{
+				if(Brightness >= 50)
+					flag_up=0;
 
+				ARGB_SetBrightness(Brightness);  // Set global brightness to 40%
+				ARGB_FillRGB(39,250,176);
+				while (!ARGB_Show()); // Update - Option 3
 
+				Brightness++;
+				}
+	 		else
+	 		{
+	 			if(Brightness <= 1)
+					flag_up=1;
+
+				ARGB_SetBrightness(Brightness);  // Set global brightness to 40%
+				ARGB_FillRGB(39,250,176);
+
+				while (!ARGB_Show()); // Update - Option 3
+
+				Brightness--;
+	 		}
+	 	}
+	 	/*
 	    int numb_diode = 0;
 	    while(1)
 	    {
+
+		if(numb_diode >= NUM_PIXELS)
+			numb_diode = 0;
+
 		ARGB_Clear(); // Clear stirp
-		ARGB_SetRGB(numb_diode, 5, 0, 0); // Set LED №1 with green
+		//HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+		ARGB_SetRGB(numb_diode, 39, 250, 176); // Set LED №1 with green
+		ARGB_SetRGB(numb_diode+1, 39, 250, 176); // Set LED №1
+		ARGB_SetRGB(numb_diode+2, 39, 250, 176); // Set LED №1 with green
+		ARGB_SetRGB(numb_diode+3, 39, 250, 176); // Set LED №1
+		ARGB_SetRGB(numb_diode+4, 39, 250, 176); // Set LED №1 with green
 	    while (!ARGB_Show()); // Update - Option 3
 
-	    HAL_Delay(1000);
+	    HAL_Delay(50);
 	    numb_diode++;
-	    if(numb_diode > 2)
-	    	numb_diode = 0;
-	    }
 
+	    }
+	 	 */
 	/*while(1)
 	{
 	  HAL_Delay(500);

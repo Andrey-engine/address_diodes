@@ -31,8 +31,8 @@
 // WS2811F — RGB, 800kHz;
 // WS2812  — GRB, 800kHz;
 // SK6812  — RGBW, 800kHz
-#define NUM_DIODE 3
-#define NUM_PIXELS NUM_DIODE*2+1 ///< Pixel quantity *2+1-correct_coef
+
+#define NUM_PIXELS 60///< Pixel quantity *2+1-correct_coef
 
 #define USE_GAMMA_CORRECTION 1 ///< Gamma-correction should fix red&green, try for yourself
 
