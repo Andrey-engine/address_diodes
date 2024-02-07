@@ -1,1 +1,7 @@
-../Core/app_main.c:10:6:app_main	16	static
+../Core/app_main.c:20:6:app_main	8	static
+../Core/app_main.c:28:6:set_led_mas	32	static
+../Core/app_main.c:36:6:blink_light	32	static
+../Core/app_main.c:73:6:run_light	24	static
+../Core/app_main.c:83:6:add_first_light	24	static
+../Core/app_main.c:86:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/app_main.c:94:6:HAL_GPIO_EXTI_Callback	16	static
